@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get i'p adress</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <section>
+        <div class="card">
+            <h2><b>Geting IP Adress.</b></h2>
+            <div class="ip_adress"></div>
+            <button id="btn">Get IP Adress.</button>
+        </div>
+    </section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             $("#btn").click(function(){
+                $.getJSON("https://ipinfo.io", function(data){
+                    $(".ip_adress").text(data.ip);
+                })
+             })
+        })
+    </script>
+</body>
+</html>
